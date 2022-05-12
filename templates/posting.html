@@ -1,0 +1,47 @@
+{% extends "example.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1>you can post something here</h1>
+{% endif %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 3rem;
+            text-align: center;
+        }
+        #topic{
+            text-align: center;
+        }
+        #inputs{
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <div id="inputs" align="center">
+    <form method="POST">
+    {% csrf_token %}
+    <input class="form-control form-control-sm" type="text" placeholder="temat" id="topic" name="topic">
+    <input class="form-control form-control-lg" type="text" placeholder="" name="text">
+    <input type="submit" value="Dodaj">
+    </form>
+</div>
+
+
+</body>
+</html>
+{% endblock %}

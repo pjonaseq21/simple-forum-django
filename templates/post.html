@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <style>
+        body{
+            background: rgba(0, 128, 0, 0.3)
+        }
+        h1{
+            text-align: center;
+            padding: 4rem;
+        }
+        .header{
+            background-color: rgb(240, 255, 255);
+            margin: 4rem;
+        }
+        .post{
+            background-color: white;
+            margin: 2rem;
+            padding: 1.5rem;
+            padding-bottom: 4rem;
+
+        }
+        #text{
+            font-size: 1rem;
+            word-wrap: break-word;
+            margin-top: 1rem;
+
+        }
+        .date{
+            padding-top: 5rem;
+            margin-bottom: -1.2rem;
+        }
+    </style>
+    <div class="header">
+        <h1>
+            Blog
+        </h1>
+    </div>
+
+    <div>
+    <a style="text-decoration: none; color: black;" >    
+        <h2 class="post">{{posts.title}} 
+        <div id="text">{{posts.text}}</div>
+        <div id="text" class="date">{{posts.created_at}}</div>
+        </h2>
+    </a>
+    </div>
+</body>
+</html>
