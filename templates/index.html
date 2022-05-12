@@ -81,13 +81,15 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">            
-              <a href="login" id="login">Login</a>
+             
               {% if user.is_authenticated %}
               <a id="login" href="logout">Logout</a>
               <h5 class="welcome"> Welcome {{ user.username }}</h3>
-
+            
                <a href="posting" id="login"><h5>Post</h5></a>
-
+                {% else %}
+                <a href="login" id="login">Login</a>
+                <a href="register" id="login">Register</a>
               {% endif %}
             </div>
           </div>
@@ -112,8 +114,10 @@
                 <div style="background-color: white; margin-bottom: 5rem;">
                     <p id="inside">{{post.title}}</p> 
                     <p id="inside" >{{post.text |truncatewords:20}}</p>
-                    <p id="inside">{{post.created_at}}</p>
-                    <p>---------------------------</p>
+                    <p id="inside">{{post.created_at}}
+                        <p>---------------------------</p>
+                    </p>
+                    
                 </div>
         </div>
         </a>

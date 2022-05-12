@@ -1,0 +1,65 @@
+{% extends 'example.html' %}
+{% block content %}
+<style>
+    #register-panel{
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        
+    }
+    #inside{
+        margin-top: 5rem;
+        background-color: #008080;
+        width: 50%;
+        height: 70%;
+        padding-bottom: 5rem;
+        margin: 1rem;
+    }
+    
+    label,input{
+        margin: 0.5rem;
+        justify-content: center;
+        
+    }
+    #hehe{
+        width: 40%;
+        float: left;
+        margin: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    #inline-text{
+        float: right;
+        color: black;
+        width: 60%;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+
+
+
+<div id="register-panel">
+ <div id="inside">
+    <div id="inline-text">
+        <p>Thank you for using this project, I am hoping that you are pleased with its content, here is cat pic for you :3</p>
+        <img src="/media/cat.jpg" style="max-width: 30%">
+    </div>
+    <div id="hehe">
+    <form method="POST" >
+    {% csrf_token %}
+    {{ form.as_p }}    
+    <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    </div>
+   
+
+ </div>
+</div>
+{% endblock %}
