@@ -17,3 +17,4 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request,'register.html', context={"form":form})
+##111
