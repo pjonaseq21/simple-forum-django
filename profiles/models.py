@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User,auth
-from django_fields import DefaultStaticImageField
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
