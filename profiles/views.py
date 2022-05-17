@@ -12,15 +12,13 @@ def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
 		if form.is_valid():
-			user = form.save(commit=True)
 			email = form.cleaned_data["email"]		
 			username = form.cleaned_data["username"]
 			password1 = form.cleaned_data["password1"]
 			password2 = form.cleaned_data["password2"]
 			if password1 == password2:
-				form.save()
-				user = (username,password1)
-			return redirect("/")
+				User.objects.create_user(email=email,username=username,password=password1)
+				return redirect("/")
 		else:
 			print("form failed")
 	

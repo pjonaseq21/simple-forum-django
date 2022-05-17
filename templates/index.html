@@ -54,6 +54,7 @@
             text-decoration: none;
             color: rgba(0,0,0,.9);
             margin: 1rem;
+            font-size: 1.5rem;
 
         }
         .welcome{
@@ -71,11 +72,18 @@
             color: white;
         }
        
+        #inside{
+            margin-left: 10rem;
+        }
+        #avatar{
+            
+            border-radius: 50%;
+        }
     </style>
      
      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Essa</a>
+          <a class="navbar-brand" href="/">Homepage</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,20 +92,23 @@
              
               {% if user.is_authenticated %}
               <a id="login" href="logout">Logout</a>
-              <h5 class="welcome"> Welcome {{ user.username }}</h3>
+              
             
-               <a href="posting" id="login"><h5>Post</h5></a>
+               <a href="posting" id="login">Post</a>
+               <a id="login"> Welcome {{ user.username }}</a>
+              <img id="avatar" class="navbar-nav pull-right" src=" {{user.profile.avatar.url}} " style="max-width: 10%;">
                 {% else %}
                 <a href="login" id="login">Login</a>
                 <a href="register" id="login">Register</a>
               {% endif %}
+              
             </div>
           </div>
         </div>
       </nav>
     
       <div class="header">
-        <h1>
+        <h1 style="color: white;">
             Forum
         </h1>
     </div>
@@ -105,17 +116,17 @@
     <div  id="postview">
         <a id="a1" style="text-decoration: none; color: black;", href="/post/{{post.id}}">    
             <div style="float: left;">
-                <a href="/profile/{{profile.id}}">
-                    <img src="{{post.profile.avatar.url}} " style="max-width: 120px; max-height: 70px; padding-top:1rem;">
+                <a href="/profile/{{post.profile.user.id}}">
+                    <p style="text-decoration: underline overline dotted red; color: black;">{{post.profile.user}} </p>
+                    <img src="{{post.profile.avatar.url}} " style="max-width: 120px; max-height: 70px; padding-top:0.5rem;">
 
-                    <p style=" margin-right: 2rem; padding-right: 4rem; padding-bottom: 6rem; padding-left: 4rem; padding-top: 1rem; ">{{post.user}} </p>  
                 </a>
             </div>
                 <div style="background-color: white; margin-bottom: 5rem;">
                     <p id="inside">{{post.title}}</p> 
                     <p id="inside" >{{post.text |truncatewords:20}}</p>
                     <p id="inside">{{post.created_at}}
-                        <p>---------------------------</p>
+                        <p id="inside">---------------------------</p>
                     </p>
                     
                 </div>
