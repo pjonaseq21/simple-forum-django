@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'posts',
     'mailer.apps.MailerConfig',
     'profiles',
+    'imagekit',
 ]
 
 MIDDLEWARE = [

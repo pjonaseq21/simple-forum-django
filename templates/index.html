@@ -14,7 +14,7 @@
         body{
             background-color: black;
             background-size: 100%;
-            width: 90%;
+            width: 100%;
             height:100%;
             background-repeat: no-repeat;
         }
@@ -26,11 +26,7 @@
             background-color:  black;
             margin: 4rem;
         }
-        .post{
-            background-color: #aaaaaa;
-            width: 100%;
-
-        }
+        
         #post{
             display: flex;
             justify-content: center;
@@ -49,7 +45,19 @@
         #btn{
             margin-top: 0.3rem;
         }
-        
+        #inside1{
+            text-align: center;
+            font-size: 2rem;
+            margin-top: -1rem;
+        }
+        #inside2{
+            width: 100%;
+            height: 30%;
+        }
+        #inside3{
+            padding-top: 5rem;
+            padding-bottom; 1rem;
+        }
         #login{
             text-decoration: none;
             color: rgba(0,0,0,.9);
@@ -72,15 +80,24 @@
             color: white;
         }
        
-        #inside{
-            margin-left: 10rem;
-        }
+       
         #avatar{
             
             border-radius: 50%;
         }
+        #postview{
+            width: 90%;
+            height: 15%;
+            float: right;
+            margin-top: 5rem;
+            margin-bottom; 4rem;
+        
+        }
     </style>
-     
+     <div style="height: 15%; color: black; width: 100%;">
+     <img id="avatar" src="/static/image/69561.jpg" style="width: 10%;"></img>
+     <p style="color: white; display:inline-block; font-size: 2rem; font-family: Arial;"="white">Forum by Pj0nas</p>
+    </div>
      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Homepage</a>
@@ -96,7 +113,9 @@
             
                <a href="posting" id="login">Post</a>
                <a id="login"> Welcome {{ user.username }}</a>
-              <img id="avatar" class="navbar-nav pull-right" src=" {{user.profile.avatar.url}} " style="max-width: 10%;">
+              <a href="/profile/{{user.profile.id}}">
+               <img id="avatar" class="navbar-nav pull-right" src=" {{user.profile.avatar2.url}} " style="max-width: 15%;">
+              </a>
                 {% else %}
                 <a href="login" id="login">Login</a>
                 <a href="register" id="login">Register</a>
@@ -107,31 +126,24 @@
         </div>
       </nav>
     
-      <div class="header">
-        <h1 style="color: white;">
-            Forum
-        </h1>
-    </div>
+    
     {% for post in posts reversed %}
-    <div  id="postview">
-        <a id="a1" style="text-decoration: none; color: black;", href="/post/{{post.id}}">    
-            <div style="float: left;">
-                <a href="/profile/{{post.profile.user.id}}">
-                    <p style="text-decoration: underline overline dotted red; color: black;">{{post.profile.user}} </p>
-                    <img src="{{post.profile.avatar.url}} " style="max-width: 120px; max-height: 70px; padding-top:0.5rem;">
+    <a id="a1" style="text-decoration: none; color: black;", href="/post/{{post.id}}">    
 
+    <div  id="postview">
+            <div style="float: left;text-align: center;   display: inline-block; width: 9%; height:10%; padding-bottom: 5rem;  vertical-align: left;" class="bg-dark" >
+                <a href="/profile/{{post.profile.user.id}}">
+                    <p style="text-decoration: none; color: black; font-size: 1.5rem;">{{post.profile.user}} </p>
+                    <img src="{{post.profile.avatar.url}} " style="max-width: 120px; max-height: 70px;">
                 </a>
             </div>
-                <div style="background-color: white; margin-bottom: 5rem;">
-                    <p id="inside">{{post.title}}</p> 
-                    <p id="inside" >{{post.text |truncatewords:20}}</p>
-                    <p id="inside">{{post.created_at}}
-                        <p id="inside">---------------------------</p>
+                <div style="background-color: white; float: right; width: 90%; height:20rem;   display: inline-block;   vertical-align: middle;   padding: 5rem 1rem;">
+                    <p id="inside1">{{post.title}}</p> 
+                    <p id="inside2" >{{post.text |truncatewords:150}}</p>
+                    <p id="inside3">{{post.created_at}}
                     </p>
                     
-                </div>
         </div>
-        </a>
     </div>
     {% endfor %}
 </body>
