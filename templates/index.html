@@ -47,7 +47,7 @@
         }
         #inside1{
             text-align: center;
-            font-size: 2rem;
+            font-size: 1rem;
             margin-top: -1rem;
         }
         #inside2{
@@ -74,6 +74,10 @@
             margin: 1rem;
             font-size: 2rem;
             text-decoration: none;
+            word-wrap: break-word;
+            padding: 1.5rem;
+            padding-bottom: 7rem;
+
         }
        
         .navbar-text{
@@ -87,7 +91,6 @@
         }
         #postview{
             width: 90%;
-            height: 15%;
             float: right;
             margin-top: 5rem;
             margin-bottom; 4rem;
@@ -128,23 +131,27 @@
     
     
     {% for post in posts reversed %}
-    <a id="a1" style="text-decoration: none; color: black;", href="/post/{{post.id}}">    
+        <div  id="postview">
 
-    <div  id="postview">
-            <div style="float: left;text-align: center;   display: inline-block; width: 9%; height:10%; padding-bottom: 5rem;  vertical-align: left;" class="bg-dark" >
+            <div style="float: left;text-align: center;   display: inline-block; width: 9%; height: 100%; padding-bottom: 5rem;  vertical-align: left;" class="bg-dark" >
                 <a href="/profile/{{post.profile.user.id}}">
                     <p style="text-decoration: none; color: black; font-size: 1.5rem;">{{post.profile.user}} </p>
                     <img src="{{post.profile.avatar.url}} " style="max-width: 120px; max-height: 70px;">
                 </a>
             </div>
-                <div style="background-color: white; float: right; width: 90%; height:20rem;   display: inline-block;   vertical-align: middle;   padding: 5rem 1rem;">
+            <a style="text-decoration: none; color: black;", href="/post/{{post.id}}">    
+
+                <div style="background-color: white; float: right; width: 87%;   display: inline-block;   vertical-align: middle; padding: 1.5rem;">
                     <p id="inside1">{{post.title}}</p> 
-                    <p id="inside2" >{{post.text |truncatewords:150}}</p>
+                    <p id="inside2" >{{post.text |truncatewords:400}}</p>
                     <p id="inside3">{{post.created_at}}
                     </p>
                     
+            </div>
+
         </div>
-    </div>
+    </a>
+
     {% endfor %}
 </body>
 </html>
