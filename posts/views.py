@@ -5,15 +5,25 @@ from django.contrib.auth.models import auth
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+
 # Create your views here.
 def index(request):
     profiles = Profile.objects.all()
     posts = Post.objects.all()
+   
     return render(request, 'index.html', {'posts': posts,'profiles':profiles})
-
+    
+def admininfo(request):
+    profiles = Profile.objects.all()
+    posts = Post.objects.all()
+    return render(request, "admininfo.html",{"profiles": profiles,'posts': posts})
 def post(request, pk):
     posts = Post.objects.get(id=pk)
     return render(request, 'post.html',{'posts': posts})
+
+
+
 
 def logout(request):
     auth.logout(request)

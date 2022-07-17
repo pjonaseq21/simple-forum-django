@@ -1,7 +1,8 @@
 {% extends 'example.html' %}
 
 {% block content %} 
-      <div id="login-panel">
+        <div id="container">
+        <div id="login-panel">
         {% for message in messages %}
         <h3>{{message}}</h3>
         {% endfor %}<br>
@@ -12,44 +13,36 @@
         <br><label for="password">Password:</label><br>
         <input type="password" name="password" id="input1"> <br>
         <input type="submit" value="submit" id="submit">
-       
         </form>
     </div>
+    </div>
+    <style>
+        div#container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div#login-panel{
+            width: 50%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+            box-shadow: 0 0 20px 10px black        }
+        label{
+            color: white;
+            margin-bottom: 0.5rem;           
+            margin-top: 1rem;
 
+        }
+        
+        </style>
 {% endblock %}
 
 
-<style>
-   body{ 
-       background: rgba(0, 128, 0, 0.3);
-        }
-    div#login-panel{
-        
-        width: 30rem;
-        height: 27rem;
-        background-color: aliceblue;
-        border: 0.75rem solid #774d40;
-        margin: auto;
-        margin-top: 15rem;
-    }
-    #input1{
-        width: 17rem;
-        height: 3rem;
-        margin: 2rem;
-        
-    }
-    label{
-        margin-left: 1rem;
-    }
-    #submit{
-    margin-left: 15rem;
-    margin-top: -1rem;
-    }
-    #login{
-      margin: 1rem;
-      text-decoration: none;
-      color: rgba(0,0,0,.9);
-    }
-</style>
+
+
 </body>
 </html>

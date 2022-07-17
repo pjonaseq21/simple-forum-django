@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+{% for profile in profiles %}
+<h3>users:  {{profile.user}} <br>
+    <p style="color: blue">{{profile.bio}}</p> <br>
+
+</h3>
+{% endfor %}
+<h1>Wszystkie posty</h1>
+{% for post in posts %}
+ <pre>
+     <p>{{post.id}}</p>
+    <div>{{post.title}} <p>author :{{post.profile}}</p></div>
+
+ </pre>
+
+{%  endfor %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting asgi_redis
+  Downloading asgi_redis-1.4.3-py2.py3-none-any.whl (20 kB)
+Collecting asgiref~=1.1.2
+  Downloading asgiref-1.1.2-py2.py3-none-any.whl (12 kB)
+Collecting msgpack-python
+  Downloading msgpack-python-0.5.6.tar.gz (138 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 139.0/139.0 KB 737.6 kB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting redis~=2.10.6
+  Downloading redis-2.10.6-py2.py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.0/65.0 KB 1.4 MB/s eta 0:00:00
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from asgi_redis) (1.16.0)
+Building wheels for collected packages: msgpack-python
+  Building wheel for msgpack-python (setup.py): started
+  Building wheel for msgpack-python (setup.py): finished with status 'done'
+  Created wheel for msgpack-python: filename=msgpack_python-0.5.6-cp310-cp310-linux_x86_64.whl size=10418 sha256=53b26681ab2f786a5d526696016c28c0b0b41478080a63333d7441767a7043df
+  Stored in directory: /home/pjonas/.cache/pip/wheels/36/15/c0/6abd0b35e76ca9d00823d197c98d947d45670fcfe9b7e7416a
+Successfully built msgpack-python
+Installing collected packages: redis, msgpack-python, asgiref, asgi_redis
+  Attempting uninstall: redis
+    Found existing installation: redis 4.3.4
+    Uninstalling redis-4.3.4:
+      Successfully uninstalled redis-4.3.4
+  Attempting uninstall: asgiref
+    Found existing installation: asgiref 3.5.2
+    Uninstalling asgiref-3.5.2:
+      Successfully uninstalled asgiref-3.5.2
+Successfully installed asgi_redis-1.4.3 asgiref-1.1.2 msgpack-python-0.5.6 redis-2.10.6
