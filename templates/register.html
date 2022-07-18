@@ -12,8 +12,14 @@
     }
     #inside{
         margin-top: 5rem;
-        background-color: #008080;
-        width: 60%;
+        background: url(/static/image/R.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;        
+
+        width: 100%;
         height: 70%;
         padding-bottom: 5rem;
         margin: 1rem;
@@ -25,28 +31,16 @@
         
     }
     #hehe{
-        width: 40%;
-        float: left;
-        margin: 1rem;
-        margin-left: auto;
-        margin-right: auto;
+        width: auto;
+        height: auto;
+        
 
     }
-    #inline-text{
-        float: right;
-        color: black;
-        width: 60%;
-        
-        margin-left: auto;
-        margin-right: auto;
-    }
+    
     label,input{
         display: table-cell
     }
-    #hehe_inputs{
-        margin-left: 1rem;
-        display: table 
-    }
+    
 </style>
 
 
@@ -54,26 +48,21 @@
 
 <div id="register-panel">
  <div id="inside">
-    <div id="inline-text">
-        <p>Thank you for using this project, I am hoping that you are pleased with its content, here is cat pic for you :3</p>
-        <img src="/media/cat.jpg" style="max-width: 30%">
-    </div>
+    
     <div id="hehe">
     <form method="POST" >
     
      {% csrf_token %}
     <div id="heheinputs">
     {{ form }} <br>
-    <button type="submit" class="save btn btn-primary" style="margin-left: 5rem;">Save</button> 
+    <button type="submit" class="save btn btn-primary" style="float:inherit; height: auto; width: 10%;         margin: 0.5rem;    ">Register</button> 
+    
+    </div>
+    <div id="inline-text" style="  float: left; "><br>
+        <img src="/media/cat.jpg" style="max-height: 15%; max-width:15%;"> <br>
     </div>
 </form>
-    </div>
-<<<<<<< HEAD
-   
-
- </div>
 </div>
-=======
 
  </div>
 </div>
@@ -85,5 +74,4 @@
  swal('{{ msg }}');
  {% endfor %}
 </script>
->>>>>>> bd9c3a2f (sss)
 {% endblock %}

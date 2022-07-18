@@ -8,11 +8,11 @@
         {% endfor %}<br>
         <form action="login" method="POST">
         {% csrf_token %}
-        <label for="email">Email:</label><br>
+        <label for="email">Nickname:</label><br>
         <input type="text" name="email" id="input1"> 
         <br><label for="password">Password:</label><br>
         <input type="password" name="password" id="input1"> <br>
-        <input type="submit" value="submit" id="submit">
+        <input class="save btn btn-primary" type="submit" value="submit" id="submit">
         </form>
     </div>
     </div>
@@ -22,22 +22,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
         }
         div#login-panel{
-            width: 50%;
+            word-wrap: break-word;
+            padding: 1rem;
+            width: 100%;
             height: 50vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
             margin-top: 5rem;
             box-shadow: 0 0 20px 10px black        }
         label{
             color: white;
             margin-bottom: 0.5rem;           
             margin-top: 1rem;
-
-        }
+            word-wrap: break-word;
         
+
+       }
+       #input1{
+        resize: vertical;
+
+        word-wrap: break-word;
+
+       }
+        #submit{
+            float: right;
+            margin-top: 10px;
+        }
+        @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+        }
         </style>
 {% endblock %}
 
